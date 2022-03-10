@@ -37,6 +37,7 @@ paths = glob(os.path.join("./DATASET", "*.parquet"))
 dataset = Dataset(
     paths,
     columns=["index", "label"],
+    index_column="index",
     num_cached_parquet=32,
     num_workers=4,
     refresh_frequency=4,

@@ -42,16 +42,16 @@ class BaseParquetDataset(data.Dataset):
         self.current_parquet_idx = 0
         self.current_pd_parquets = None  # cached parquets(DataFrame)
         self.current_indices_in_cache = []  # data index in cached parquet
-        self.total_len = self.get_total_length()
+        self.total_len = self._get_total_length()
         self._cache_setting()
 
     def __len__(self):
         return self.total_len
 
-    def get_total_length(self) -> int:
+    def _get_total_length(self) -> int:
         """read total parquet list and calcurate number of data row"""
         fdf = pq.ParquetDataset(self.parquet_paths)
-        return len(fdf.read(columns=["index"]))
+        return len(fdf.read(columns=self.index))
 
     def _cache_setting(self):
         """parquet data load from storage to memory"""

@@ -24,6 +24,7 @@ def main():
     dataset = Dataset(
         paths,
         columns=["index", "label"],
+        index_column="index",
         num_cached_parquet=NUM_CACHED_PARQUET,
         num_workers=NUM_WORKERS,
         refresh_frequency=REFRESH_FREQUENCY,
