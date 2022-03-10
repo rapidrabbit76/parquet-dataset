@@ -1,0 +1,13 @@
+# cache
+**.pytest_cache**
+**__pycache__**
+
+# build
+*.egg-info
+build
+dist
+
+# TEST
+*.parquet
+**testmondata**
+**/DATASET**
