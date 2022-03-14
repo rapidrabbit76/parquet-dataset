@@ -37,6 +37,7 @@ def main():
 
     for epoch in range(EPOCHS):
         for index, label in tqdm(dataloader):
+            # let's training!
             pass
 
 
