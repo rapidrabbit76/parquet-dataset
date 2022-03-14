@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-version = "0.0.1.dev3"
+version = "0.0.1.dev4"
 
 project_urls = {
     "Source": "https://github.com/rapidrabbit76/parquet-dataset",
