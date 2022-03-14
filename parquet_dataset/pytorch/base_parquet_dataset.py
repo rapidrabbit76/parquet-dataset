@@ -13,7 +13,7 @@ class BaseParquetDataset(data.Dataset):
         parquet_paths: List[str],
         columns: List[str] = [],
         index_column: Union[List[str], str] = [],
-        trainsforms: Callable = None,
+        transforms: Callable = None,
         num_cached_parquet: int = 1,
         num_workers: int = 0,
         refresh_frequency: int = 0,
@@ -26,7 +26,7 @@ class BaseParquetDataset(data.Dataset):
             raise "check refresh_frequency"
 
         self.columns = columns
-        self.transforms = trainsforms
+        self.transforms = transforms
         self.num_workers = num_workers
         self.refresh_frequency = refresh_frequency
         self.num_cached_parquet = num_cached_parquet
